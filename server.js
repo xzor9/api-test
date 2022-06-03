@@ -23,17 +23,17 @@ const rappers = {
 
 app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/index.html')
-    console.log('index.html loaded')
+    //console.log('index.html loaded')
 })
 
 app.get('/api/:name', (req, res)=>{
     const rapperName = req.params.name.toLocaleLowerCase()
     if( rappers[rapperName] ){
         res.json(rappers[rapperName])
-        console.log(`sending json for ${rapperName}`)
+        //console.log(`sending json for ${rapperName}`)
     }else{
         res.json(rappers['unknown'])
-        console.log(`sending unknown json`)
+        //console.log(`sending unknown json`)
     }
     
     
